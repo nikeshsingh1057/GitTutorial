@@ -1,3 +1,5 @@
 this is my first file
 file ke ander change kiye hai
 file ke ander modiye kiye hai
+
+git diff ke bare me janaa hai to open karo

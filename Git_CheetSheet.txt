@@ -1,0 +1,121 @@
+                                                       /* learning git code with harry */
+
+                                                                  Lecture_1;
+
+git config --global user.name "nikesh singh"
+git config --global user.email "nikesh.singh_cs21@gla.ac.in"
+git config --list
+git config user.name
+git config user.email
+
+                                                                   Lecture_2;
+
+Staging area-> stagaing area vo area hai jaha se file ready hota commit hone ke liye note kisi file ko commit karne se paha usko stating area me dalana hota hai
+git diff -> showing between Commits/Staging area & working dirictries i.e agar hum file commit kar diye and uske badd usss file me kuch add ya kuch delete karte hai
+            then uss changes ko hum git diff ke help se dekh sakte hai ke kon se new line add hua hai ya konsi line delete hua hai.
+
+                                                                   Lecture_3;
+
+kisi bhee file/foler ko init karne ka porcess. ->
+
+1.git init                                                      (A .git folder is created in your original folder)
+2.git status                                                    (to see is it init or not or is it tracked or not)
+3.git add -A or git add --a or git add . or git add file.name   (staging area me lanke ke liye now after stating area file is ready to commit)
+4.git commit -m "Initial commit"                                (ye command commit karne ke liye hai double inverted comma message put karna hai ki konsa commit hai)
+5.git log or git log --oneline                                  (this is used to see all commit)
+6.rm -rf .git                                                   (this command is used to remove tracking from git)
+7.git commit -a -m "message jo likhna ho"                       (iss command se staging area me bina dale commit kar sakte                                                                                                                hai i.e file me changes kiye likin staging area me nahi 
+								 dalkar direct commit kar diye i.e sort hand hai eak hee line me sara kamm ho jayega).
+
+8.git checkout -f        (this is very danger command because agar hum koi file modify kiye hai then wapus original content file ki dekhan chate hai then run this                           command ye modified content ko remove kar dega and original par le jayega . Note har eak file ke liye hoga).
+9.git restore --staged file.name         (iss command se file ko unstage kar sakte hai i.e )
+
+
+note: agar commit ke badd file me changes kiye hai then dubra usko commit karne se pahele staging area me lana hota hai i.e kuch bhee change karne ke badd usko
+git add -A or git add . karna hota commit karne ke liye.
+
+                                                                   Lecture_4;
+
+Clonging a Remote Git Repo form Github (i.e github se folder copy karna apne system me)
+
+1.git clone repo_Ka_Path_Dena_hai         (jis folder ke ander copy kar uske ander ja ke ye commend chalaye)
+  e.g -> git clone https://github.com/ayush-singh787898/Leetcode_Solved_Question.git
+         (eak new Leetcode_Solved_Question name se folder banega jis folder me abhi hai and colne ho jayega)
+         (to copy in new folder git clone https://github.com/ayush-singh787898/Leetcode_Solved_Question.git  new foldr name
+
+                                                                   Lecture_5
+
+Git Ignore (how to ingnore unnecssary file  while commit line .class in java .exe in c etc)
+porcess-> create a .gitignore file and put all unnecssary file with its extension name in .gitignore file 
+
+two method hota hai gitignore me file dalne ke liye 1. by putting file name with extension in .gitignore 2. only with extension name se (i.e *.class *.err *.exe etc)
+note agar sare .class ya .exe ya .exe file ko ignore karna hai then *.log ya *.exe ya *.err karna hoga ye * unversal ke tarh work karega and sare .claa .err .exe ko 
+ignore kar dega.
+
+we can also ignore folder by putting in gitignore e.g -> folderName/ or src/
+
+note: agar * se mention kiye hai .gitignore then all file uss type ke ignore ho jayea e.g -> *.exe *.class etc
+      aur FileName/ ke aagae iss tarah se .gitignore me put kiye then sara uss type ka file ignore ho jayega e.g -> src/ 
+      now jaha jaha src file dikhega usko git ingnor kar dega.
+
+      now agar sirf outer wala src folder ko ignore karna chate hai and baki inner wale ko ignore karna nahi chate hai then iss trah se -> /src/ likhan hota hai ye 
+
+                                                                   Lecture_6
+
+Kisi file ko git ke command se delete kaise karte hai ->
+1.git rm file.name  -> git rm third.txt
+
+Rename file karne ka tarika
+1.git mv originalFileName newFileName   e.g git mv first.txt newFile.txt
+
+agar hum kisi file lo untracked karna chate hai i.e git ke tracking se remove karna chate hai then hum uss file ko git rm --cached file.name kar sakte hai.
+1.git cached index.txt      (now aise karne se index.txt file git ke untrack ho gai )
+
+							           Lecture_7
+
+Git Log : viewing & changing Commit in Git
+1.git log                (this shwo all commit message)
+2.git log -p             (this command show konse si line add hua hai and konsi line remove hua hai file me)
+3.git log -p -n          (jitne commit dekhan chate ho e.g git log -p -2 ye first two commit me changes dikahayega)
+4.git log --stat         (this also show commit message in better way)
+5.git log --pretty       (showing commit one by one)
+6.git log --pretty=oneline  (eak line sara commit show ho jayega)
+7.git log --pretty=short    (short me commit dikha dega)
+8.git log --pretty=full     (all details show karega)
+9.git log --since=2.days    (pichle 2 din me kitna commit hua vo show karega)
+10.git log --since=2.weeks  (pichle 2 week me kitna commit hua vo show karega)
+11.git log --since=2.months (pichle 2 months me kitna commit hua vo show karega)
+
+
+								   Lecture_8
+
+Code ko github par push karne ka process (i.e remote server par push karne ka porcess)
+
+        first create a new repository on the command line  (jisme push karna chate hai apne code ko)
+	
+	1.git init                     (tracke karne ke liye file/folder ko)
+	2.git add -A or git add.       (staging area me lane ke liye)
+	3.git commit -m "first commit"
+	//git branch -M main   (abhi use nahi hai iska)
+	4.git remote add origin git@github.com:nikeshsingh1457/GitTutorial.git (iska matlab origin add kar do git@github.com:nikesh.. yani git add kar do remote server                                        as a github ko jiska name origin hoga Note: hum origin ko kuch aur bhee name de sakte hai but conventionly yahi sab likhate hai)
+	5.git push -u origin main
+	
+
+	…or push an existing repository from the command line
+	1.git remote add origin git@github.com:nikeshsingh1057/GitTutorial.git
+	//git branch -M main   (abhi use nahi hai iska)
+	2.git push -u origin main
+	
+	Note: SHA authentication karna hota push karne ke liye uske bina error dega (for security reason ).
+              i.e git credential manager wager me password bana kar set karna hoga tab ja ke code push kar payenge.
+
+1.git remote  (issase ye pata chalta hai ki git remote kis name se hai i.e origin se hai)
+2.git remote-v (ye pull and puch ka batayega kaha se karna hai remote se)
+
+								    Lecture_9
+
+alies in git -> alies ke help se hum git command ko apne mutabik set kar sakte hai i.e python me numpy as np karte hai and ab numpy ke gajah np se kamm ho jata hai usi trah git se me bhee ye kar sakte hai.
+e.g 1.git config --global alias.st status     now git status ko golbally git st set kar diye hai ab git st se status show kar dega.
+    2.git config --global alias.ci commit     now git ci karne se git commit ho jayega.
+    3.git config --global alias.unstage 'restore --staged--'   now git unstage karne se file unstage ho jayega.
+    4.git config --global alias.last 'log -p -1'   now git last karne se last 1 commit dikha dega.
